@@ -1,0 +1,169 @@
+<diagram program="umletino" version="15.1"><zoom_level>13</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>234</y><w>338</w><h>260</h></coordinates><panel_attributes>Cliente
+--
+-nombre: String
+-rut: String
+-telefono: String
+-vuelosRealizados: int
+--
++getNombre(): String
++getRut(): String
++getVuelosRealizados(): int
++incrementarVuelos(): void
++tieneDescuento(): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>481</x><y>234</y><w>338</w><h>260</h></coordinates><panel_attributes>Pasaje
+--
+-cliente: Cliente
+-vuelo: Vuelo
+-asiento:Asiento
+-precioFinal: int
+-descuento: Descuento
+--
++calcularPrecio(): int
++aplicarDescuento(d: Descuento): void
++getAsiento(): Asiento
++getPrecioFinal(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>962</x><y>234</y><w>338</w><h>221</h></coordinates><panel_attributes>Venta
+--
+-servicio: String
+-medioPago: String
+-monto: int
+-fecha: String
+--
++getMonto(): int
++getFecha(): String
++getMedioPago(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1443</x><y>234</y><w>338</w><h>260</h></coordinates><panel_attributes>Encomienda
+--
+-pesoKg: double
+-precioFinal: int
+-fechaEntrega: String
+-descuento: double
+--
++calcularPrecio(): int
++aplicarDescuento(porcentaje: double): void
++getPesoKg(): double
++getPrecioFinal(): int
++getFechaEntrega(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1924</x><y>234</y><w>338</w><h>351</h></coordinates><panel_attributes>Vuelo
+--
+-fecha: String
+-hora: String
+-avion: Avion
+-destino: Destino
+-extraordinario: boolean
+-asientos: List&lt;Asiento&gt;
+-cargaActualKg: double
+--
++generarAsientos(): void
++getAsientos(): List&lt;Asiento&gt;
++buscarAsiento(numero: int): Asiento
++asientosDisponibles(): int
++reservarAsiento(a: Asiento): boolean
++cargaDisponible(): double
++agregarCarga(kg: double): boolean
++esExtraordinario(): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>481</x><y>728</y><w>338</w><h>91</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Descuento
+--
++aplicar(precio: int): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1443</x><y>728</y><w>338</w><h>234</h></coordinates><panel_attributes>Destino
+--
+-nombre: String
+-precioPasaje: int
+-precioKgEncomienda: int
+--
++getNombre(): String
++getPrecioPasaje(): int
++getPrecioKgEncomienda(): int
++setPrecioPasaje(p: int): void
++setPrecioKgEncomienda(p: int): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1924</x><y>728</y><w>338</w><h>221</h></coordinates><panel_attributes>Avion
+--
+-modelo: String
+-capacidadPasajeros: int
+-pesoMaximo: int
+--
++getModelo(): String
++getCapacidadPasajeros(): int
++getPesoMaximo(): int
++cabeCarga(pesoKg: double): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>481</x><y>858</y><w>338</w><h>78</h></coordinates><panel_attributes>DescuentoFrecuente
+--
++aplicar(precio: int): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>481</x><y>962</y><w>338</w><h>65</h></coordinates><panel_attributes>DescuentoEmergencia
+--
++aplicar(precio: int): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>481</x><y>1144</y><w>338</w><h>117</h></coordinates><panel_attributes>DescuentoGerente
+--
+-porcentaje: double
+--
++aplicar(precio: int): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2405</x><y>234</y><w>338</w><h>117</h></coordinates><panel_attributes>Gerente
+--
++revisarResumenVentas(fecha): List
++crearVueloExtraordinario(): Vuelo
++aplicarDescuentoEspecial(pct: double): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2886</x><y>468</y><w>338</w><h>78</h></coordinates><panel_attributes>Asistente
+--
++registrarReserva(): Pasaje
++cotizarPrecio(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2886</x><y>234</y><w>338</w><h>169</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+Usuario
+--
+-nombre: String
+-rut: String
+-usuario: String
+--
++getNombre(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>806</x><y>338</y><w>182</w><h>52</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=0..1</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1287</x><y>338</y><w>182</w><h>52</h></coordinates><panel_attributes>lt=-
+m1=0..1
+m2=1</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1599</x><y>481</y><w>52</w><h>273</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;190;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1703</x><y>572</y><w>325</w><h>182</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;120;230;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2093</x><y>572</y><w>52</w><h>182</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1768</x><y>338</y><w>182</w><h>52</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes><additional_attributes>120;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>325</x><y>338</y><w>182</w><h>52</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>702</x><y>481</y><w>871</w><h>273</h></coordinates><panel_attributes>lt=&lt;.
+m1=
+m2=0..1</panel_attributes><additional_attributes>10;190;10;100;630;100;630;10</additional_attributes></element><element><id>Relation</id><coordinates><x>637</x><y>481</y><w>65</w><h>273</h></coordinates><panel_attributes>lt=&lt;.
+m1=
+m2=0..1</panel_attributes><additional_attributes>10;190;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2249</x><y>286</y><w>182</w><h>52</h></coordinates><panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2730</x><y>286</y><w>182</w><h>39</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>120;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>3068</x><y>390</y><w>39</w><h>104</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>2249</x><y>481</y><w>663</w><h>52</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=*</panel_attributes><additional_attributes>10;10;490;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>481</x><y>1053</y><w>338</w><h>65</h></coordinates><panel_attributes>SinDescuento
+--
++aplicar(precio: int): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>806</x><y>338</y><w>1950</w><h>923</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;690;1480;690;1480;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>936</x><y>728</y><w>416</w><h>338</h></coordinates><panel_attributes>&lt;&lt;Controlador&gt;&gt;
+ControladorAerolinea
+--
+-vuelos: List
+-clientes: List
+-ventas: List
+-destinos: List
+-aviones: List
+-estadoEmergencia: boolean
+--
++poblarDatos(): void
++buscarVuelos(destino, fecha): List
++reservarPasaje(cliente, vuelo, asiento): Pasaje
++enviarEncomienda(cliente, vuelo, kg): Encomienda
++registrarVenta(servicio, medioPago, monto): Venta
++resumenVentasDiario(fecha): List</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1131</x><y>442</y><w>52</w><h>312</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1</panel_attributes><additional_attributes>10;10;10;220</additional_attributes></element><element><id>Relation</id><coordinates><x>78</x><y>481</y><w>988</w><h>273</h></coordinates><panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes><additional_attributes>10;10;10;120;730;120;730;190</additional_attributes></element><element><id>Relation</id><coordinates><x>1339</x><y>780</y><w>130</w><h>52</h></coordinates><panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes><additional_attributes>80;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1235</x><y>806</y><w>715</w><h>351</h></coordinates><panel_attributes>lt=&lt;-
+m1= *
+m2=1</panel_attributes><additional_attributes>530;10;480;10;480;250;10;250;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>156</y><w>1482</w><h>104</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes><additional_attributes>1110;60;1110;10;10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>143</x><y>117</y><w>1469</w><h>143</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;90;10;10;1100;10;1100;90</additional_attributes></element><element><id>Relation</id><coordinates><x>403</x><y>767</y><w>104</w><h>455</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>60;10;10;10;10;90;60;90;10;90;10;170;60;170;10;170;10;240;60;240;10;240;10;330;60;330</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2327</x><y>728</y><w>338</w><h>221</h></coordinates><panel_attributes>Asiento
+--
+-numero: int
+-fila: int
+-columna: char
+-ocupado: boolean
+--
++getNumero(): int
++estaOcupado(): boolean
++ocupar(): void
++liberar(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2249</x><y>520</y><w>273</w><h>234</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1= 1
+m2=*</panel_attributes><additional_attributes>10;10;190;160</additional_attributes></element><element><id>Relation</id><coordinates><x>806</x><y>429</y><w>1729</w><h>780</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes><additional_attributes>1300;400;1300;580;60;580;60;10;10;10</additional_attributes></element></diagram>
