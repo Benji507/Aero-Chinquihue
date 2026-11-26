@@ -1,27 +1,29 @@
 package clases;
 
-public class Venta {
+public class Venta{
     private String servicio;
-    private MedioPago medioPago;
+    private String medioPago;
     private int monto;
     private String fecha;
 
-    public Venta(String servicio, MedioPago medioPago, int monto,String fecha) {
+    public Venta(String servicio, String medioPago, int monto, String fecha){
         this.servicio = servicio;
         this.medioPago = medioPago;
         this.monto = monto;
         this.fecha = fecha;
-    }
+   }
 
-    public int getMonto() {
-        return monto;
-    }
+    public String getServicio(){
+        return servicio;}
+    public int getMonto(){
+        return monto;}
+    public String getFecha(){
+        return fecha;}
+    public String getMedioPago(){
+        return medioPago;}
 
-    public String getFecha() {
-        return fecha;
-    }
-
-    public String getMedioPago() {
-        return medioPago.toString();
-    }
+    @Override
+    public String toString(){
+        return fecha + " / " + servicio + " / " + medioPago + " / CLP" + monto;
+   }
 }
