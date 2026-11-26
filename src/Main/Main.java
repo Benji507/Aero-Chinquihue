@@ -1,13 +1,11 @@
+//Benjamin Espinoza, Francisco Velasquez, Camilo Bustamente, Benjamin Paredes
+
 package vista;
 
 import clases.*;
 import controlador.ControladorAerolinea;
 import java.util.List;
 
-/**
- * AeroChinquihue - Avance 1
- * Integrantes: (completar nombres del equipo)
- */
 public class Main {
     public static void main(String[] args) {
         ControladorAerolinea c = new ControladorAerolinea();
